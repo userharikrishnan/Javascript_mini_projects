@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lottery Draw</title>
+
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</head>
+<body class="align-items-centre">
+
+			<div class="container bg-warning border rounded w-50 mt-5 pb-2">
+				<h2 class="text-danger">Lucky Draw</h2>
+				<button class="btn btn-primary btn-block py-2 border-0 my-3" onclick="lotteryDraw()" data-toggle="modal" data-target="#lottery">Draw</button>
+				<input type="text" id="result" class="form-control text-center" disabled>
+			</div>
+
+
+								<div class="modal fade" id="lottery" role="dialog">
+			             <div class="modal-dialog modal-dialog-centered">
+				              <div class="modal-content ">
+					               <div class="modal-header">
+					   								<h3 class="modal-tittle">LUCKY DRAW</h3>
+						                <button type="button" class="close bg-danger border-dark" data-dismiss="modal">&times;</button>
+					                </div>
+					                <div class="modal-body">
+					            			<p id="modalresult"></p>
+					                </div>
+
+					                <div class="modal-footer">
+					                	<button class="btn btn-sm btn-primary " data-dismiss="modal">Close</button>
+					                </div>
+				              </div>
+			             </div>
+	            	</div>
+
+
+
+
+
+
+	<script type="text/javascript">
+
+function lotteryDraw(){
+let arr = [75468,12469,24548,31648,24447,58944,69583,44444]
+let x = arr[Math.floor(Math.random()*arr.length)]
+
+console.log(x)
+document.getElementById('result').style.color = "red"
+document.getElementById('result').value = x
+document.getElementById('modalresult').innerHTML = ('The winner is'+ " " + x)
+}
+	</script>
+
+</body>
+</html>

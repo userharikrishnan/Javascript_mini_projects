@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>list</title>
+</head>
+<body>
+
+	<div style="display: flex;">
+
+		<ul id="list1" onclick="myFunction1(event)">
+
+			<li>list 1</li>
+			<li>list 2</li>
+			<li>list 3</li>
+			
+		</ul>
+
+	
+		<ul id="list2" onclick="myFunction2(event)" style="position: fixed; left: 100px;">
+
+			<li>list a</li>
+			<li>list b</li>
+			<li>list c</li>
+
+		</ul>
+
+	</div>
+
+<script type="text/javascript">
+
+function myFunction1(event) {
+	a = event.target
+	document.getElementById('list2').appendChild(a)
+}
+
+function myFunction2(event) {
+	b = event.target
+	document.getElementById('list1').appendChild(b)
+}
+
+</script>
+
+
+</body>
+</html>

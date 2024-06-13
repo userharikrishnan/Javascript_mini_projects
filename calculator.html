@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>calculator</title>
+
+	<style type="text/css">
+
+		body{background-image: url(https://i.pinimg.com/736x/d5/fb/7f/d5fb7f4ce4b18b147fa210a5299ea66f.jpg);}
+		
+		.calculator{position: relative;
+			width: 310px;
+			height: 330px;
+			top: 170px;
+			margin: auto ;
+			background-color: transparent;
+			backdrop-filter: blur(2px);
+			box-shadow: 0 0 5px 1px  snow;
+			border: 2px solid rgba(0, 0, 0, 0.5);
+			border-radius: 3%;
+		}
+
+		select{position: relative;
+			top: 35px;
+			width: 50px;
+			border-radius: 4px;
+			text-align: center;
+		}
+
+		input {width: 225px;
+			height: 30px;
+			margin: 10px 4px 20px 8px;
+			border: 2px solid black;
+			border-radius: 5px;
+			text-align: center;}
+
+		#submit{margin-left: 7px;
+			margin-top: 65px;
+			width: 295px;
+			height: 30px;
+			border: 2px solid rgba(0, 0, 0, 0.3);
+			border-radius: 7px;
+			background-image: linear-gradient(rgb(255,255,255),rgba(255,10,10,0.3));
+			font-size: 15px;
+		}
+
+		#result{width: 287px;
+			height: 40px;
+			margin-top: 10px;
+			border: 2px solid black;
+			font-size: 20px;
+			color: rgb(0, 0, 0, 1.0);
+			background-color: floralwhite;
+			text-align: center;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div class="calculator">
+
+		<input id="input1" type="text" placeholder="Enter a number">
+
+		<select id="operators">
+
+			<option>/</option>
+			<option>*</option>
+			<option>+</option>
+			<option>-</option>
+
+		</select><br>
+
+		<input id="input2" type="text" placeholder="Enter a number"><br><br>
+		<input type="submit" id="submit" onclick="calcFunc()">
+		<input id="result" type="text" disabled> 
+	</div>
+
+	<script type="text/javascript">
+
+		
+		function calcFunc() {
+		let x = parseInt(document.getElementById("input1").value)
+		let y = parseInt(document.getElementById("input2").value)
+		let z = document.getElementById("operators").value	
+		switch(z){
+			case "+":
+			    document.getElementById("result").value = add(x,y)
+			     break;
+
+			case "-":
+			    document.getElementById("result").value = sub(x,y)
+			     break;
+
+			case "*":
+			    document.getElementById("result").value = mul(x,y)
+			     break;
+
+			case "/":
+			    document.getElementById("result").value = div(x,y)
+			     break;
+				}
+		}	
+
+			function add(a,b){
+				c = a+b
+				return c
+			}
+
+			function sub(a,b){
+				c = a-b
+				return c
+			}
+
+			function mul(a,b){
+				c = a*b
+				return c
+			}
+
+			function div(a,b){
+				c = a/b
+				return c
+			}
+			 
+
+	</script>
+
+</body>
+</html>
